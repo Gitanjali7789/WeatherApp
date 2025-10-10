@@ -1,5 +1,5 @@
 // netlify/functions/weather.js
-const fetch = require("node-fetch");
+const fetch = (...args) => import('node-fetch').then(module => module.default(...args));
 
 exports.handler = async function(event, context) {
     const city = event.queryStringParameters?.city;
