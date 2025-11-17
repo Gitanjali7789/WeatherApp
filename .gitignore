@@ -1,0 +1,10 @@
+# Hide secret keys
+.env
+
+# Hide system files
+.DS_Store
+
+# Hide Node.js dependencies
+/node_modules
+# Local Netlify folder
+.netlify

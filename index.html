@@ -7,12 +7,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>🌤 Weather App</h1>
-        <input type="text" id="city" placeholder="Enter city name">
+<div id="weather-card">
+    
+    <div class="search-container">
+        <input type="text" id="city" placeholder="Enter city">
         <button onclick="getWeather()">Search</button>
-        <div id="result"></div>
     </div>
+    
+    <img id="weather-icon" src="" alt=""> 
+    <h1 id="temperature"></h1>
+    <h2 id="city-name"></h2>
+    
+    <div id="details-container">
+        <div class="detail-box">
+            <p>Humidity</p>
+            <p id="humidity"></p>
+        </div>
+        <div class="detail-box">
+            <p>Wind Speed</p>
+            <p id="wind-speed"></p>
+        </div>
+    </div>
+
+    <div id="message-display"></div>
+</div>
 
     <script src="script.js"></script>
 </body>

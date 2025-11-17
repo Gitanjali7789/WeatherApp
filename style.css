@@ -1,19 +1,103 @@
+/* Style for the main page (behind the card) */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f0f4f8; /* Nice light gray/blue */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- The Weather Card --- */
+#weather-card {
+    width: 350px;
+    background-color: #ffffff; /* Default white */
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-top: 50px;
+    /* This makes the color change smooth! */
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-input {
+/* --- Card Content Styling --- */
+.search-container {
+    display: flex;
+    gap: 10px;
+}
+.search-container input {
+    width: 100%;
     padding: 10px;
-    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
 }
-
-button {
+.search-container button {
     padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 10px;
     cursor: pointer;
 }
 
-#result {
+#weather-icon {
+    width: 120px;
+    height: 120px;
     margin-top: 20px;
+}
+
+#temperature {
+    font-size: 4rem; /* 4rem is large */
+    margin: 10px 0;
+}
+
+#city-name {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+#details-container {
+    display: flex;
+    justify-content: space-around;
+}
+.detail-box {
+    text-align: center;
+}
+.detail-box p:first-child {
+    color: #888; /* Label (e.g., "Humidity") */
+    margin-bottom: 5px;
+}
+.detail-box p:last-child {
+    font-weight: bold; /* Value (e.g., "64%") */
+}
+
+/* --- Dynamic Color Classes (for the CARD) --- */
+/* Now these classes apply to #weather-card, not <body> */
+
+#weather-card.weather-clear {
+    background-color: #87CEEB; /* Sky Blue */
+}
+#weather-card.weather-clouds {
+    background-color: #B0C4DE; /* Light Steel Blue */
+}
+#weather-card.weather-rain {
+    background-color: #778899; /* Slate Gray */
+    color: white;
+}
+#weather-card.weather-storm {
+    background-color: #2F4F4F; /* Dark Slate Gray */
+    color: white;
+}
+#weather-card.weather-snow {
+    background-color: #FFFAFA; /* Snow */
+}
+
+/* Make text readable on dark backgrounds */
+#weather-card.weather-rain #city-name,
+#weather-card.weather-storm #city-name,
+#weather-card.weather-rain .detail-box p:first-child,
+#weather-card.weather-storm .detail-box p:first-child {
+    color: #eee;
 }
